@@ -643,6 +643,7 @@ cross join  orders o;
 
 --------------------------------------------------------------------------------------------------------------
 
+
 --SQL Server assignments using the GROUP BY and HAVING clauses
 
 --Assignment 1:   
@@ -661,4 +662,68 @@ join Department d
 on e.Department=d.DepartmentID
 group by DepartmentID
 having avg(e.salary)>50000
+
+
+
+--Assignment 2:  
+--Task: Retrieve the department name and the total number of employees in each department. 
+--Only display departments that have more than 5 employees.
+
+
+use SalesDatabase
+select * from Employees
+select * from Department 
+
+select d.DepartmentName, count(e.EmployeeID) as TotalEmployees
+from Employees e
+join department d
+on e.Department=d.DepartmentID
+group by d.DepartmentName
+HAVING COUNT(e.EmployeeID) > 5;
+
+--Assignment 3:  
+--Task: Retrieve the department name, maximum salary, and minimum salary for each department. 
+--Only include departments where the minimum salary is greater than 30,000
+
+use SalesDatabase
+select * from Employees
+select * from Department 
+
+select d.DepartmentName, max(e.salary) as max_salary,min(e.salary) as min_salary
+from Employees e
+join department d
+on e.Department=d.DepartmentID
+group by d.DepartmentName
+having min(e.salary)>30000;
+
+--Assignment 4:  
+--Task: Retrieve the employee name and total sales made by each salesperson.
+--Only display salespersons who have made total sales of more than 100,000. 
+
+use SalesDatabase
+select * from Employees
+select * from sales1
+
+select e.EmployeeName, sum(s.amount) as total_sale
+from employees e
+join sales1 s 
+on e.EmployeeID = s.EmployeeID
+group by e.EmployeeID, e.EmployeeName
+having sum(s.amount) > 100000;
+
+
+--Assignment 5:  
+--Task: Retrieve the customer name and the total number of orders placed by each customer.
+--Only display customers who have placed more than 3 orders. 
+
+use companyDB
+select * from orders
+select * from Customer
+
+select c.CustomerName, count(o.OrderID) as TotalOrders
+from Orders o
+join Customer c 
+on o.CustomerID = c.CustomerID
+group by c.CustomerID, c.CustomerName
+having count(o.OrderID) > 3;
 
