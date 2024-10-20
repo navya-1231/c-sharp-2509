@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Dynamic Color Changer</h1>
+    <h4>Select a color</h4>
+    <input type="color" id="color"><br>
+    <button onclick="submit()">click</button>
+
+    <script>
+        function submit(){
+            const color=document.getElementById('color');
+            document.body.style.backgroundColor = color.value;
+        }      
+
+    </script>
+</body>
+</html>

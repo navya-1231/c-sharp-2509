@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            
+            justify-content: center;
+            align-items: center;
+            
+            
+        }
+
+        #image-section {
+            text-align: center;
+            
+        }
+
+        #image {
+            width: 400px; 
+            height: 300px; 
+            object-fit: cover;
+        }
+
+        .button-container {
+            margin-top: 20px; 
+           
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            margin: 10px 175px;
+            padding: 10px 200px; 
+            width: 200px;
+            font-size: 16px; 
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="image-section">
+        <img id="image" src="image1.jpeg">
+    </div>
+    <button onclick="previous()">Previous</button>
+    <button onclick="next()">Next</button>
+
+    <script>
+        let image=document.getElementById('image-section');
+        let currentIndex=0;
+        const imageGallery=[
+            'image1.jpeg',
+            'image2.jpeg',
+            'image3.jpeg',
+            'image4.jpeg',
+            'image5.jpeg',
+            'image6.jpeg',
+        ];
+        function next(){
+            currentIndex++;
+            if (currentIndex==imageGallery.length){
+                currentIndex=0;
+            }
+            document.getElementById('image').src = imageGallery[currentIndex];
+        }
+        function previous(){
+            currentIndex--;
+            if (currentIndex<0){
+                currentIndex=imageGallery.length-1;
+            }
+
+            document.getElementById('image').src = imageGallery[currentIndex];
+        }
+    </script>
+</body>
+</html>

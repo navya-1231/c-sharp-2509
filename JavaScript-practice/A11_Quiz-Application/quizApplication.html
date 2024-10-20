@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>Quiz</h2>
+        <form id="quiz-form">
+            <div class="question">
+                <label>1. What is the full form of HTML?</label><br><br>
+                <label><input type="radio" name="q1" value="wrong">HighText Machine Language</label><br>
+                <label><input type="radio" name="q1" value="wrong">HyperText and links Markup Language</label><br>
+                <label><input type="radio" name="q1" value="correct">HyperText Markup Language</label><br>
+                <label><input type="radio" name="q1" value="wrong">None of these</label><br><br>
+            </div>
+
+            <div class="question">
+                <label>2. The correct sequence of HTML tags for starting a webpage is?</label><br><br>
+                <label><input type="radio" name="q2" value="wrong">Head, Title, HTML, body</label><br>
+                <label><input type="radio" name="q2" value="wrong">HTML, Body, Title, Head</label><br>
+                <label><input type="radio" name="q2" value="wrong">HTML, Head, Title, Body</label><br>
+                <label><input type="radio" name="q2" value="correct">HTML, Head, Title, Body</label><br><br>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <p id="result"></p>
+        <p id="correctAnswers"></p>
+    </div>
+
+    <script>
+        const form = document.getElementById("quiz-form");
+        const result = document.getElementById("result");
+        const correctAnswersDisplay = document.getElementById("correctAnswers");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let score = 0;
+            const totalQuestions = 2;
+
+            const answers = document.querySelectorAll('input[type="radio"]:checked');
+            let correctAnswersArray = [];
+
+            answers.forEach((answer) => {
+                if (answer.value === "correct") {
+                    score++;
+                    correctAnswersArray.push(answer.parentElement.textContent.trim());
+                }
+            });
+
+            result.textContent = `You scored ${score} out of ${totalQuestions}. `;
+
+            if (score === totalQuestions) {
+                result.style.color = "green";
+                result.textContent += "Great job!";
+            } else {
+                result.style.color = "red";
+                result.textContent += "Try again!";
+            }
+
+            correctAnswersDisplay.textContent = `The right answers are: ${correctAnswersArray.join(", ")}`;
+        });
+    </script>
+</body>
+</html>

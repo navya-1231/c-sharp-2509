@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+</head>
+<body>
+    <h2>Tip Calculator</h2>
+    <input type="number" id="billAmount" placeholder="input bill amount">
+    <select name="tipPercentage" id="tipPercentage">
+        <option value="10">10%</option>
+        <option value="20">20%</option>
+        <option value="30">30%</option>
+        <option value="40">40%</option>
+    </select>
+    <button onclick="result()">Calculate</button>
+    <p id="result"></p>
+
+    <script>
+        function result(){
+            let billAmount = parseFloat(document.getElementById('billAmount').value);
+            let tipPercentage = parseFloat(document.getElementById('tipPercentage').value);
+
+            let tipAmount = (billAmount * tipPercentage) / 100;
+            let totalBill = billAmount + tipAmount;
+
+            document.getElementById('result').innerText="Bill Amount is "+totalBill;
+        }
+       
+    </script>
+</body>
+</html>

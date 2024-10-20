@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Simple Calculator</h1>
+    <input type="number" id="number1" placeholder="Enter first number"><br><br>
+    <input type="number" id="number2" placeholder="Enter second number"><br><br><br>
+    <label for="operator">Choose</label>
+    <ul>
+        <li>1.Addition</li>
+        <li>2.Substraction</li>
+        <li>3.Multiplication</li>
+        <li>4.Division</li>
+    </ul>
+    <input type="number" id="choice" placeholder="Enter choice"><br><br><br>
+    <button onclick="submit()">submit</button>
+
+    <p id="result"></p>
+    
+    <script>
+        function submit(){
+            let number1 = parseFloat(document.getElementById('number1').value);
+            let number2 = parseFloat(document.getElementById('number2').value);
+
+            let choice = parseFloat(document.getElementById('choice').value);
+            let result;
+
+            if (choice==1){
+                result=number1+number2;   
+            }
+            else if(choice==2){
+                result=number1-number2;
+            }
+            else if(choice==3){
+                result=number1*number2;
+            }
+            else if(choice==4){
+                if (number2==0){
+                    document.getElementById('result').innerText = "Division by zero is undefined";
+                    return;
+                }
+                else{
+                    result=number1/number2;
+                }
+            }
+            else{
+                document.getElementById('result').innerText = "invalid choice try again";
+                return;
+                
+            }
+            document.getElementById('result').innerText = "Result "+result;
+
+        }
+        
+        
+    </script>
+
+</body>
+</html>
