@@ -1,0 +1,16 @@
+﻿
+.header{
+    background-color:lightgreen;
+    font-family:'Times New Roman', Times, serif;
+    align-content:center;
+}
+section{
+   display:flex;
+}
+
+.comments{
+    color:darkgreen;
+}
+ul{
+    list-style:none;
+}

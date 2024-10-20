@@ -1,0 +1,41 @@
+﻿body {
+    font-family: Arial, sans-serif;
+}
+header {
+    text-align: center;
+    align-content:center;
+    background-color:lightskyblue;
+    height:100px;
+}
+.product-section {
+    display: flex;
+}
+.product-image img {
+    flex:1
+}
+
+.product-details {
+    flex:2;
+    text-align:left;
+}
+ul {
+    display: inline-block;
+    text-align: left;
+}
+.cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buy-button {
+    background-color: orange;
+    color: black;
+    height: 50px;
+    width: 100px;
+    align-content: center;
+    text-align: center;
+}
+h2{
+    color:red;
+
+}

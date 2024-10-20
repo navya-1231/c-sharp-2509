@@ -1,0 +1,27 @@
+﻿body {
+    background-image: url("img.jpeg");
+  
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.main-div {
+    background-color: white;
+    align-content: center;
+    display: flex;
+
+}
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: beige;
+    padding: 20px;
+}
+button {
+    padding: 10px;
+    background-color: burlywood;
+    margin-top: 20px;
+}

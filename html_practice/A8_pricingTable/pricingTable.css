@@ -1,0 +1,66 @@
+﻿
+
+body {
+    font-family: Arial, sans-serif;
+    background-image:url(design.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.pricing-table {
+    display: flex;
+    gap: 70px;
+}
+
+.plan {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;   
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+ h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.features {
+    list-style: none;
+    
+}
+
+.features li {
+        margin-bottom: 10px;
+ }
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color:limegreen;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    button:hover {
+        background-color:forestgreen;
+    }
+
+.plan:hover {
+    transform: scale(1.05);
+   
+}
+

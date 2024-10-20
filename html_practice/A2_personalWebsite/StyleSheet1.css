@@ -1,0 +1,46 @@
+﻿body {
+    background-color: aliceblue;
+    text-align: center;
+}
+
+.header-section {
+    text-align: center;
+    background-color: cadetblue;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures header is on top */
+}
+
+h1 {
+    color: darkblue;
+}
+
+h2 {
+    color: darkred;
+}
+
+ul {
+    display: inline-block;
+    text-align: left;
+}
+
+.footer-section {
+    background-color: cadetblue;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    
+}
+
+p {
+    font-size: 20px;
+}
+
+.section-bio {
+    padding-top: 150px; 
+    top: auto;
+}
+

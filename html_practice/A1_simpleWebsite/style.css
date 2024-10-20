@@ -1,0 +1,60 @@
+﻿body {
+    background-color: aliceblue;
+    font-family: Arial, sans-serif;
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.div1 {
+    text-align: center;
+
+}
+
+h1 {
+    color: brown;
+
+}
+
+.section {
+    display: flex;
+    align-items: center;
+   
+}
+
+.image-section {
+
+    justify-content: center;
+}
+
+.bio-section {
+ 
+    padding-left: 20px;
+    text-align: left;
+}
+
+img {
+    height: 150px;
+    width: 150px;
+}
+
+h2 {
+
+    color: darkblue;
+
+}
+
+ul {
+    display: inline-block;
+    text-align: left;
+}
+.main-div {
+    align-content:center;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    width: 60%;
+    
+}
